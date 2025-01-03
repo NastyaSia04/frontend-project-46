@@ -11,7 +11,6 @@ const gendiff = (filepath1, filepath2) => {
   const fullFilePath2 = getFullPath(filepath2);
   const data1 = getData(fullFilePath1);
   const data2 = getData(fullFilePath2);
-  console.log(data1, data2);
   
 };
 export default gendiff;
