@@ -5,11 +5,11 @@ const spacesCount = 4;
 const leftIndent = (depth) => replacer.repeat(depth * spacesCount).slice(0, -2);
 const rightIndent = '  ';
 
-const treeValue = (currentValue, currentDepth) => {
+const getTreeValue = (currentValue, currentDepth) => {
   if (!_.isPlainObject(currentValue)) {
     return `${currentValue}`;
   }
-  const expandedObj = Object.entries(currentValue).map(([key, value]) => `${leftIndent(currentDepth + 1)}  ${key}: ${treeValue(value, currentDepth + 1)}`);
+  const expandedObj = Object.entries(currentValue).map(([key, value]) => `${leftIndent(currentDepth + 1)}  ${key}: ${getTreeValue(value, currentDepth + 1)}`);
   return `{\n${expandedObj.join('\n')}\n${leftIndent(currentDepth)}${rightIndent}}`;
 };
 
@@ -20,16 +20,16 @@ const stylish = (data) => {
     }) => {
       switch (type) {
         case 'added': {
-          return `${leftIndent(depth)}+ ${key}: ${treeValue(value, depth)}`;
+          return `${leftIndent(depth)}+ ${key}: ${getTreeValue(value, depth)}`;
         }
         case 'deleted': {
-          return `${leftIndent(depth)}- ${key}: ${treeValue(value, depth)}`;
+          return `${leftIndent(depth)}- ${key}: ${getTreeValue(value, depth)}`;
         }
         case 'unchanged': {
-          return `${leftIndent(depth)}  ${key}: ${treeValue(value, depth)}`;
+          return `${leftIndent(depth)}  ${key}: ${getTreeValue(value, depth)}`;
         }
         case 'changed': {
-          return `${leftIndent(depth)}- ${key}: ${treeValue(value1, depth)}\n${leftIndent(depth)}+ ${key}: ${treeValue(value2, depth)}`;
+          return `${leftIndent(depth)}- ${key}: ${getTreeValue(value1, depth)}\n${leftIndent(depth)}+ ${key}: ${getTreeValue(value2, depth)}`;
         }
         case 'nested': {
           return `${leftIndent(depth)}  ${key}: {\n${iter(children, depth + 1).join('\n')}\n${leftIndent(depth)}${rightIndent}}`;
