@@ -33,12 +33,17 @@ The default format is 'stylish', meaning if the --format argument is omitted, th
 For example: ```gendiff --format plain __fixtures__/file1.json __fixtures__/file2.json```
 
 
+**Creating differences between two flat .json files:**
 <a href="https://asciinema.org/a/jqLzp12psgIhH0gXDKiLqBXhi" target="_blank"><img src="https://asciinema.org/a/jqLzp12psgIhH0gXDKiLqBXhi.svg" /></a>
 
+**Creating differences between two flat .yml files:**
 <a href="https://asciinema.org/a/LeKK95sGNkBvQZsHFhUWjxhHE" target="_blank"><img src="https://asciinema.org/a/LeKK95sGNkBvQZsHFhUWjxhHE.svg" /></a>
 
+**Creating differences between two nested .json files (the default parameter 'stylish'):**
 <a href="https://asciinema.org/a/OwFsEVpDS7trzKjKE8vKc72Wt" target="_blank"><img src="https://asciinema.org/a/OwFsEVpDS7trzKjKE8vKc72Wt.svg" /></a>
 
+**Creating differences between two nested .json files (with parameter '--format plain'):**
 <a href="https://asciinema.org/a/fgzXVk5S6pCUf0rRPsIAXG9zZ" target="_blank"><img src="https://asciinema.org/a/fgzXVk5S6pCUf0rRPsIAXG9zZ.svg" /></a>
 
+**Creating differences between two nested .json files (with parameter '--format json'):**
 <a href="https://asciinema.org/a/M7jaZUYwO4t1asT2rpha7vC9I" target="_blank"><img src="https://asciinema.org/a/M7jaZUYwO4t1asT2rpha7vC9I.svg" /></a>
