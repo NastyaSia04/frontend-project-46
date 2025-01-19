@@ -26,7 +26,7 @@ version NPM - 11.0.0.
 ```cd frontend-project-46```
 * install the package:\
 ```npm link```
-* start comparing files
+* start comparing files\
 To call the utility, type its name and arguments on the command line.\
 The arguments are: the output format ('stylish', 'plain' and 'json') and the paths to the files being compared.\
 The default format is 'stylish', meaning if the --format argument is omitted, the program will display the result in the 'stylish' format.\
