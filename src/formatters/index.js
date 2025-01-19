@@ -8,6 +8,8 @@ const getFormatName = (type) => {
       return stylish;
     case 'plain':
       return plain;
+    case 'json':
+      return JSON.stringify;
     default:
       return stylish;
   }
