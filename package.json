@@ -4,7 +4,7 @@
   "bin": {
     "gendiff": "bin/gendiff.js"
   },
-  "description": "This program can compare two files in .json (or .yml/.yaml) format. And also output the comparison result in different formats such as 'stylish', 'plain' and 'json'.",
+  "description": "[![Actions Status](https://github.com/NastyaSia04/frontend-project-46/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/NastyaSia04/frontend-project-46/actions)",
   "homepage": "https://github.com/NastyaSia04/frontend-project-46#readme",
   "bugs": {
     "url": "https://github.com/NastyaSia04/frontend-project-46/issues"
