@@ -4,7 +4,7 @@ const buildDiff = (obj1, obj2) => {
   const keys1 = Object.keys(obj1);
   const keys2 = Object.keys(obj2);
   const arrUniqueKeys = _.union(keys1, keys2);
-  const sortedKeys = arrUniqueKeys.sort();
+  const sortedKeys = _.sortBy(arrUniqueKeys);
   const differenses = sortedKeys.map((key) => {
     if (_.isPlainObject(obj1[key]) && (_.isPlainObject(obj2[key]))) {
       return { key, type: 'nested', children: buildDiff(obj1[key], obj2[key]) };
