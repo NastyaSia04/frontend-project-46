@@ -4,7 +4,7 @@
   "bin": {
     "gendiff": "bin/gendiff.js"
   },
-  "description": "[![Actions Status](https://github.com/NastyaSia04/frontend-project-46/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/NastyaSia04/frontend-project-46/actions)",
+  "description": "This is the second eductional project at Hexlet - the Difference Calculator.",
   "homepage": "https://github.com/NastyaSia04/frontend-project-46#readme",
   "bugs": {
     "url": "https://github.com/NastyaSia04/frontend-project-46/issues"
