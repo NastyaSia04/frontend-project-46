@@ -36,3 +36,9 @@ test('diff JSON files in Plain format', () => {
   const expectedPlainFormatDiff = readFile('expectPlainFormatJsonFiles.txt');
   expect(receivedPlainFormatDiff).toEqual(expectedPlainFormatDiff);
 });
+
+test('diff JSON files in Json format', () => {
+  const receivedJsonFormatDiff = gendiff(fileJson1, fileJson2, 'json');
+  const expectedJsonFormatDiff = readFile('expectJsonFormat.txt');
+  expect(receivedJsonFormatDiff).toEqual(expectedJsonFormatDiff);
+});
