@@ -18,7 +18,7 @@ describe('testing gendiff', () => {
     const filePath2 = getFixturePath(`file2.${format}`);
     expect(gendiff(filePath1, filePath2)).toBe(readFile('expectStylishFormatFiles.txt'));
     expect(gendiff(filePath1, filePath2, 'stylish')).toBe(readFile('expectStylishFormatFiles.txt'));
-    expect(gendiff(filePath1, filePath2, 'plain')).toBe(readFile('expectPlainFormatJsonFiles.txt'));
-    expect(gendiff(filePath1, filePath2, 'json')).toBe(readFile('expectJsonFormat.txt'));
+    expect(gendiff(filePath1, filePath2, 'plain')).toBe(readFile('expectPlainFormatFiles.txt'));
+    expect(gendiff(filePath1, filePath2, 'json')).toBe(readFile('expectJsonFormatFiles.txt'));
   });
 });
