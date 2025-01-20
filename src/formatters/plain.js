@@ -4,7 +4,7 @@ const getViewValue = (currentValue) => {
   if (_.isPlainObject(currentValue) && currentValue !== null) {
     return '[complex value]';
   }
-  return (typeof currentValue === 'string') ? `'${currentValue}'` : currentValue;
+  return (typeof currentValue === 'string') ? `'${currentValue}'` : String(currentValue);
 };
 
 const plain = (data, correctPath = '') => {
