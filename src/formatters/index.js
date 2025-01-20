@@ -11,7 +11,7 @@ const getFormatName = (type) => {
     case 'json':
       return JSON.stringify;
     default:
-      return stylish;
+      throw new Error(`Unknown type of processing - ${type}! Only stylish, plain or json.`);
   }
 };
 
