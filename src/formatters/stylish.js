@@ -2,15 +2,15 @@ import _ from 'lodash';
 
 const replacer = ' ';
 const spacesCount = 4;
-const leftIndent = (depth) => replacer.repeat(depth * spacesCount).slice(0, -2);
+const getLeftIndent = (depth) => replacer.repeat(depth * spacesCount).slice(0, -2);
 const rightIndent = '  ';
 
 const getTreeValue = (currentValue, currentDepth) => {
   if (!_.isPlainObject(currentValue)) {
     return `${currentValue}`;
   }
-  const expandedObj = Object.entries(currentValue).map(([key, value]) => `${leftIndent(currentDepth + 1)}  ${key}: ${getTreeValue(value, currentDepth + 1)}`);
-  return `{\n${expandedObj.join('\n')}\n${leftIndent(currentDepth)}${rightIndent}}`;
+  const expandedObj = Object.entries(currentValue).map(([key, value]) => `${getLeftIndent(currentDepth + 1)}  ${key}: ${getTreeValue(value, currentDepth + 1)}`);
+  return `{\n${expandedObj.join('\n')}\n${getLeftIndent(currentDepth)}${rightIndent}}`;
 };
 
 const stylish = (data) => {
@@ -20,19 +20,19 @@ const stylish = (data) => {
     }) => {
       switch (type) {
         case 'added': {
-          return `${leftIndent(depth)}+ ${key}: ${getTreeValue(value, depth)}`;
+          return `${getLeftIndent(depth)}+ ${key}: ${getTreeValue(value, depth)}`;
         }
         case 'deleted': {
-          return `${leftIndent(depth)}- ${key}: ${getTreeValue(value, depth)}`;
+          return `${getLeftIndent(depth)}- ${key}: ${getTreeValue(value, depth)}`;
         }
         case 'unchanged': {
-          return `${leftIndent(depth)}  ${key}: ${getTreeValue(value, depth)}`;
+          return `${getLeftIndent(depth)}  ${key}: ${getTreeValue(value, depth)}`;
         }
         case 'changed': {
-          return `${leftIndent(depth)}- ${key}: ${getTreeValue(value1, depth)}\n${leftIndent(depth)}+ ${key}: ${getTreeValue(value2, depth)}`;
+          return `${getLeftIndent(depth)}- ${key}: ${getTreeValue(value1, depth)}\n${getLeftIndent(depth)}+ ${key}: ${getTreeValue(value2, depth)}`;
         }
         case 'nested': {
-          return `${leftIndent(depth)}  ${key}: {\n${iter(children, depth + 1).join('\n')}\n${leftIndent(depth)}${rightIndent}}`;
+          return `${getLeftIndent(depth)}  ${key}: {\n${iter(children, depth + 1).join('\n')}\n${getLeftIndent(depth)}${rightIndent}}`;
         }
         default:
           throw new Error('Unknown type of file!');
